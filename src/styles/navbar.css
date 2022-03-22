@@ -1,0 +1,62 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.wrapper .sidebar{
+    background: midnightblue;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 100vh;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+
+.wrapper .sidebar .logo h2{
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .logo{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wrapper .sidebar ul{
+    padding-left: 0px;
+}
+
+.wrapper .sidebar ul li {
+    display: block;
+    padding: 13px 20px;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.wrapper .sidebar ul li .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+
+.wrapper .sidebar ul li:hover,
+.wrapper .sidebar ul li.active{
+    color: white;
+
+    background:rgb(115, 132, 165);
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+.wrapper .sidebar ul li:hover .icon,
+.wrapper .sidebar ul li.active .icon{
+    color: white;
+}
+
+.wrapper .sidebar ul li:hover:before,
+.wrapper .sidebar ul li.active:before{
+    display: block;
+}
+
