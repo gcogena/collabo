@@ -1,0 +1,78 @@
+.header {
+    background-image: url("../images/research.jpg");
+    height: 200px;
+    width: 100%;
+    filter: brightness(50%);
+}
+
+.title {
+    color: white;
+    font-weight: bold;
+    font-size:32pt;
+    text-align: center;
+    margin: -110px 35%;
+    position: absolute;
+}
+
+.color-div {
+    background-color:#F5F5F5;
+    width: 100%;
+}
+
+.version {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 3% 10%;
+}
+
+.photo {
+    margin: auto;
+}
+
+.content {
+    margin: auto;
+    padding: 0px 50px;
+    text-align: justify !important;
+}
+
+.collabo {
+    display: grid;
+    padding: 0% 10%;
+    grid-template-columns: 30% 70%;
+}
+
+.collabo-pic {
+    width: 250px;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    padding: 0% 10%;
+}
+
+.meet-the-team{
+    text-align: center;
+    padding: 5% 0%;
+}
+
+.team-title {
+    padding-bottom: 2%;
+}
+
+.profile {
+    margin: auto;
+    text-align: center;
+}
+
+.profile_pic {
+    border-radius: 50%;
+    width: 120px;
+}
+
+.footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 2% 0%;
+}

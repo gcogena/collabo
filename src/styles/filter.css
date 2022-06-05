@@ -1,6 +1,6 @@
 
 
-.accordion, .auth-details {
+.accordion, .auth-details, .data-details {
     margin: 5px;
     box-shadow: 0px 0px 3px 0px #909090;
 }
@@ -38,7 +38,7 @@ ul {
 
 .scroll {
     overflow-y: scroll;
-    height: 150px;
+    height: 140px;
 }
 
 .legend-header {
@@ -74,11 +74,26 @@ ul {
 }
 
 .auth-details {
-    margin: 5px;
+    margin: 10px;
+    height: fit-content;
+    width: 340px;
 }
 
 .top-title {
     text-align: center;
     font-weight: bold;
     font-size: 11pt;
+}
+
+/* topic left panel */
+.topic_list {
+    width: 250px;
+    padding: 5px;
+}
+
+/* data stories left panel */
+.data-details {
+    margin: 10px;
+    height: fit-content;
+    width: 300px;
 }

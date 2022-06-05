@@ -9,7 +9,6 @@ interface NavParams {
 
 const Navbar: React.FC<NavParams> = ({ onPageClick, clicked }) => {
     return (
-
         <div className="wrapper">
             <div className="sidebar">
                 <div className='logo'>
