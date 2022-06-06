@@ -34,12 +34,21 @@ topics studied by each author. </p>
         <div className="color-div version">
             <div className="profile content">
                 <h3>Collabo 1.0</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>
+                    This version was developed in the De La Salle University Manila as a thesis project of Jerald Edric Ang,
+                    Marjorie Nicole Lua, Dyonne Maxime Macalino, and Jomari Alex Morales in September 2021. Collabo 1.0 hosted 
+                    its database using Neo4j and built the collaboration network using d3js. They were able to include 1000 rows 
+                    of data in drawing the graph.
+                </p>
             </div>
 
             <div className="profile content">
                 <h3>Collabo 2.0</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>
+                    This version was developed in the University of the Philippines Manila as a special problem of Graciel Ogena
+                    in June 2022. Collabo 2.0 still hosted its database using Neo4j and built the collaboration network using sigma.js. 
+                    The application can now use up to 10,000 rows of data in building the graph.
+                </p>
             </div>
         </div>
 

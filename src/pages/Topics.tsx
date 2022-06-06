@@ -40,8 +40,15 @@ interface TopicsParams {
     const [year, setYear] = useState('2020');
     const handleYearChange=(e:any)=>{
         setYear(e.target.value.toString())
+        setTopic('Most Researched Topics of Authors')
         setTopTopicsList(top_topics[e.target.value.toString()])
         setTopicsPerYearList(topics_per_year[e.target.value.toString()])
+        setClickedNode({
+            id: "",
+            name: "",
+            affiliation: "",
+            topic: {"id":"","gamma":0,"terms":"", "color":"", "count":0}
+          })
     } 
 
     const [topic, setTopic] = useState('Most Researched Topics of Authors');
@@ -87,7 +94,7 @@ interface TopicsParams {
         setYear("2020")
     }
 
-    var limit = "5000";
+    var limit = "1000";
 
   return (
     <>

@@ -17,8 +17,8 @@ const DataStories: React.FC<DataStoriesParams> = ({ changeSidebar }) => {
       changeSidebar('Data Stories')
   },[])
 
-  const [selectedGraph, setSelectedGraph] = useState('Data Story Description') 
-  const [description, setDescription] = useState('Click a data story to view its description') 
+  const [selectedGraph, setSelectedGraph] = useState(GraphListData[0]["title"]) 
+  const [description, setDescription] = useState(GraphListData[0]["desc"]) 
 
   return (
     <div className="data-stories">

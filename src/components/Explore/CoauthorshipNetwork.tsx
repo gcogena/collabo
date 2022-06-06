@@ -49,7 +49,7 @@ const CoauthorshipNetwork: React.FC<CNParam> = ({ query, nodes, edges, centralit
   },[community])
 
   useEffect(() => {
-    // Create all nodes
+
     nodes.forEach((node) => {
 
       graph.addNode(node.id, {

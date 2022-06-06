@@ -54,6 +54,25 @@ const Explore: React.FC<ExploreParams> = ({ changeSidebar }) => {
         else if(centrality === 'Betweenness Centrality') setCentralityRange(range["betweenness_range"][e.target.value.toString()])
         else if(centrality === 'Closeness Centrality') setCentralityRange(range["closeness_range"][e.target.value.toString()])
         else setCentralityRange(range["eigenvector_range"][e.target.value.toString()])
+
+        setClickedNode({
+            id: "",
+            name: "",
+            affiliation: "",
+            degree: 0,
+            betweenness: 0,
+            closeness:0,
+            eigenvector: 0,
+            leiden: {id:"", color:""},
+            sbm: {id:"", color:""},
+            paper_count: 0,
+            color: "",
+            affiliation_color: "",
+            degree_size: 0,
+            betweenness_size: 0,
+            closeness_size: 0,
+            eigenvector_size: 0
+          })
     } 
 
     const [color, setColor] = useState('Author');
@@ -126,7 +145,7 @@ const Explore: React.FC<ExploreParams> = ({ changeSidebar }) => {
         setYear("2020")
     }
 
-    var limit = "5000";
+    var limit = "1000";
 
     return (
         <>
