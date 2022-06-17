@@ -72,7 +72,7 @@ const CoauthorshipData: React.FC<CoauthorshipParams> = ({ year, limit, centralit
     run({ year, limit })
   }, [ year, limit ])
 
-  if( loading ) return <Spinner style={{ position: "absolute", top: "45%", left: "45%" }} animation="border"/>
+  if( loading ) { console.log("Before: " + Date.now()); return <Spinner style={{ position: "absolute", top: "45%", left: "45%" }} animation="border"/>}
   else if( error ) return <h1>{ error.message }</h1>
 
   records?.map((record)=>{
@@ -93,19 +93,9 @@ const CoauthorshipData: React.FC<CoauthorshipParams> = ({ year, limit, centralit
                       betweenness_size: JSON.parse(record.get('a1_betweennessSize'))[year]*2,
                       closeness_size: JSON.parse(record.get('a1_closenessSize'))[year]/2,
                       eigenvector_size: JSON.parse(record.get('a1_eigenvectorSize'))[year]*2,
-                      // size: centrality === "Degree Centrality" ? JSON.parse(record.get('a1_degreeSize'))[year]*2 : 
-                      //       centrality === "Betweenness Centrality" ? JSON.parse(record.get('a1_betweennessSize'))[year]*2 :
-                      //       centrality === "Closeness Centrality" ? JSON.parse(record.get('a1_closenessSize'))[year]*2 :
-                      //       JSON.parse(record.get('a1_eigenvectorSize'))[year]*2 ,
                       leiden: JSON.parse(record.get('a1_leiden')).hasOwnProperty(year) ? JSON.parse(record.get('a1_leiden'))[year] :  "None",
                       sbm: JSON.parse(record.get('a1_sbm')).hasOwnProperty(year) ? JSON.parse(record.get('a1_sbm'))[year] :  "None",
                       paper_count: record.get('a1_count'),
-                      // color: community === "Community (Leiden Algorithm)" ? (JSON.parse(record.get('a1_leiden')).hasOwnProperty(year) ? 
-                      //           JSON.parse(record.get('a1_leiden'))[year]["color"] :  "black") :
-                      //        community === "Community (Stochastic Block Model)" ? (JSON.parse(record.get('a1_sbm')).hasOwnProperty(year) ? 
-                      //        JSON.parse(record.get('a1_leiden'))[year]["color"] : "black"):
-                      //        community === "Affiliation" ? record.get('a1_affcolor') :
-                      //        record.get('a1_color')
                       color: record.get('a1_color'),
                       affiliation_color: record.get('a1_affcolor')
           }); 
@@ -127,19 +117,9 @@ const CoauthorshipData: React.FC<CoauthorshipParams> = ({ year, limit, centralit
                       betweenness_size: JSON.parse(record.get('a2_betweennessSize'))[year]*2,
                       closeness_size: JSON.parse(record.get('a2_closenessSize'))[year]/2,
                       eigenvector_size: JSON.parse(record.get('a2_eigenvectorSize'))[year]*2,
-                      // size: centrality === "Degree Centrality" ? JSON.parse(record.get('a2_degreeSize'))[year]*2 : 
-                      //       centrality === "Betweenness Centrality" ? JSON.parse(record.get('a2_betweennessSize'))[year]*2 :
-                      //       centrality === "Closeness Centrality" ? JSON.parse(record.get('a2_closenessSize'))[year]*2 :
-                      //       JSON.parse(record.get('a2_eigenvectorSize'))[year]*2,
                       leiden: JSON.parse(record.get('a2_leiden')).hasOwnProperty(year) ? JSON.parse(record.get('a2_leiden'))[year] : {id:"none", color:"black"},
                       sbm: JSON.parse(record.get('a2_sbm')).hasOwnProperty(year) ? JSON.parse(record.get('a2_sbm'))[year] : {id:"none", color:"black"},
                       paper_count: record.get('a2_count'),
-                      // color: community === "Community (Leiden Algorithm)" ? (JSON.parse(record.get('a2_leiden')).hasOwnProperty(year) ? 
-                      //           JSON.parse(record.get('a2_leiden'))[year]["color"] : "black") :
-                      //        community === "Community (Stochastic Block Model)" ? (JSON.parse(record.get('a2_sbm')).hasOwnProperty(year) ? 
-                      //        JSON.parse(record.get('a2_leiden'))[year]["color"] :  "black"):
-                      //        community === "Affiliation" ? record.get('a2_affcolor') :
-                      //        record.get('a2_color')
                       color: record.get('a2_color'),
                       affiliation_color: record.get('a2_affcolor')
           });
@@ -149,11 +129,12 @@ const CoauthorshipData: React.FC<CoauthorshipParams> = ({ year, limit, centralit
           getCommunityCount(nodes[nodes.length-1].affiliation, record.get('a2_affcolor'), aff_com);
       }  
       
-      edges.push({id:edge, source: source, target: target, year: record.get('r_year')})
+      edges.push({id:edge, source: source, target: target, year: record.get('r_year'), weight: record.get('r_weight')})
     }
-   
   });
-  
+
+  console.log("After: " + Date.now())
+
   return (
       <CoauthorshipNetwork 
         nodes={ nodes } edges={ edges } query={ query }

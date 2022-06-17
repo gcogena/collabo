@@ -12,7 +12,7 @@ const Navbar: React.FC<NavParams> = ({ onPageClick, clicked }) => {
         <div className="wrapper">
             <div className="sidebar">
                 <div className='logo'>
-                   <h2>COLLABO</h2>
+                   <h2>COLLABO 2.0</h2>
                 </div>
                 <ul>
                    {SidebarData.map((data, index) => {

@@ -59,7 +59,9 @@ const CNRightPanel: React.FC<CNRightPanelParams> = ({ data, color, centrality, c
         { centrality_range.map((value:number, index:number)=> 
             (index+1) % 2 === 1 ?
             <div className="centrality">
-              <div style={{ width:((index+3)/2).toString().concat("mm"), height:((index+3)/2).toString().concat("mm"), 
+              <div style={{ 
+                width:((index+1)).toString().concat("mm"), 
+                height:((index+1)).toString().concat("mm"), 
                 backgroundColor:"midnightblue", borderRadius:"100%", margin:"auto" }}></div>
               { value.toExponential(2) }
             </div> : <></>

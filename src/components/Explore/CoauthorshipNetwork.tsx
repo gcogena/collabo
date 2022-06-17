@@ -6,10 +6,8 @@ import {
   useRegisterEvents,
   useLoadGraph
 } from "react-sigma-v2";
-// import Sigma from "sigma";
-// import { Coordinates } from "sigma/types";
-import { AuthorNode, Edge, CommunityCount } from "../../types";
 import forceAtlas2 from "graphology-layout-forceatlas2";
+import { AuthorNode, Edge, CommunityCount } from "../../types";
 
 interface CNParam {
   query: string;

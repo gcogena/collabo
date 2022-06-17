@@ -84,7 +84,7 @@ interface TopicsParams {
 
     const resetGraph = () => {
         setQuery("")
-        setTopic("All Topics")
+        setTopic("Most Researched Topics of Authors")
         setClickedNode({
             id: "",
             name: "",
@@ -94,8 +94,8 @@ interface TopicsParams {
         setYear("2020")
     }
 
-    var limit = "1000";
-
+    var limit = "5000";
+    
   return (
     <>
         <SigmaContainer className="graph-window" style={{ height: "100%", width: "100%" }} >         
@@ -109,7 +109,7 @@ interface TopicsParams {
                 <div className="year">
                     Collaboration Network
                     <h2>1960 to { year }</h2>
-                    From { limit } rows of data
+                    Using { limit } rows of data
                 </div>
 
                     <InputGroup className="search graph-control">

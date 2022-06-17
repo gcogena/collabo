@@ -61,7 +61,7 @@ const TopicData: React.FC<TopicDataParams> = ({year, limit, topic, specificTopic
     run({ year, limit })
   }, [ year, limit, specificTopic ])
 
-  if( loading ) return <Spinner style={{ position: "absolute", top: "45%", left: "45%" }} animation="border"/>
+  if( loading ) { console.log("Before: " + Date.now()); return <Spinner style={{ position: "absolute", top: "45%", left: "45%" }} animation="border"/>}
   else if( error ) return <h1>{ error.message }</h1>
 
   records?.map((record)=>{
@@ -106,14 +106,16 @@ const TopicData: React.FC<TopicDataParams> = ({year, limit, topic, specificTopic
                   })
       }
 
-      edges.push({id:edge, source: source, target: target, year: record.get('r_year')})
+      edges.push({id:edge, source: source, target: target, year: record.get('r_year'), weight: record.get('r_weight')})
     }
 
   })
 
+  console.log("After: " + Date.now())
+
   return (
     <TopicNetwork query={query} nodes={nodes} edges={edges} authors={authors} 
-      topic={ topic } setAuthorNames={getAuthorNames}
+      setAuthorNames={getAuthorNames}
       clickedNode={clickedNode} onNodeClick={onNodeClick} />
   )
 }

@@ -13,7 +13,6 @@ import { AuthorTopicNode, Edge } from '../../types'
 
 
 interface TNParam {
-  topic: string;
     query:string;
     nodes: AuthorTopicNode[];
     edges: Edge[];
@@ -23,7 +22,7 @@ interface TNParam {
     setAuthorNames:Function;
 }
 
-const TopicNetwork: React.FC<TNParam> = ({topic, query, nodes, edges, authors, setAuthorNames, clickedNode, onNodeClick }) => {
+const TopicNetwork: React.FC<TNParam> = ({ query, nodes, edges, authors, setAuthorNames, clickedNode, onNodeClick }) => {
 
     const sigma = useSigma();
     const registerEvents = useRegisterEvents();

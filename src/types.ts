@@ -7,7 +7,6 @@ export interface AuthorNode {
   betweenness: number;
   closeness: number;
   eigenvector: number;
-  // size: number;
   leiden: Community;
   sbm: Community;
   paper_count: number;
@@ -39,6 +38,7 @@ export interface Edge {
     source: string;
     target: string;
     year: string;
+    weight: number;
 };
 
 export interface Community {
